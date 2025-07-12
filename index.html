@@ -1,77 +1,330 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Fundamentos de CSS</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
-    h2 {
-      color: #2980b9;
-    }
-    .ejemplo {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin: 10px 0;
-      background-color: #fff;
-    }
-    .color {
-      color: red;
-    }
-    .fondo {
-      background-color: yellow;
-    }
-    .tamanio {
-      font-size: 24px;
-    }
-    .borde {
-      border: 3px dashed green;
-    }
-    .margen {
-      margin: 30px;
-      background-color: lightblue;
-    }
-    .padding {
-      padding: 20px;
-      background-color: lightgreen;
-    }
-    .fuente {
-      font-family: 'Courier New', monospace;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de CSS - Ejemplos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .example-container {
+            background-color: #e9ecef;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            overflow: auto; /* Para contener flotantes si los hubiera */
+        }
+
+        /* --- Box Model Example --- */
+        .box-model-example {
+            width: 150px;
+            height: 70px;
+            background-color: lightblue;
+            padding: 20px; /* Relleno */
+            border: 5px solid darkblue; /* Borde */
+            margin: 30px; /* Margen */
+            text-align: center;
+            line-height: 70px; /* Para centrar verticalmente el texto */
+            color: white;
+            font-weight: bold;
+            box-sizing: content-box; /* Default */
+        }
+
+        /* --- Display Example --- */
+        .display-example {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            background-color: #f8f9fa;
+            text-align: center;
+            border-radius: 3px;
+        }
+        .block-element {
+            display: block;
+            width: 80%;
+            background-color: #d1ecf1;
+        }
+        .inline-element {
+            display: inline;
+            background-color: #d4edda;
+        }
+        .inline-block-element {
+            display: inline-block;
+            width: 120px;
+            height: 50px;
+            background-color: #fff3cd;
+        }
+
+        /* --- Position Example --- */
+        .position-container {
+            position: relative;
+            height: 250px;
+            background-color: #e2f0cb;
+            border: 2px dashed #9ccc65;
+            margin-bottom: 50px;
+        }
+        .position-container .box {
+            padding: 10px;
+            border: 1px solid #6c757d;
+            background-color: #f2f2f2;
+            text-align: center;
+            width: 80px;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .static-box {
+            background-color: #ffcccc;
+        }
+        .relative-box {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            background-color: #cceeff;
+        }
+        .absolute-box {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #ffebcd;
+        }
+        .fixed-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ccffcc;
+            border: 2px solid green;
+            color: green;
+            width: 100px;
+            height: 60px;
+            line-height: 60px;
+            z-index: 1000;
+        }
+        .sticky-box {
+            position: sticky;
+            top: 0;
+            background-color: #ffddaa;
+            border: 2px solid orange;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            z-index: 999;
+        }
+
+
+        /* --- z-index Example --- */
+        .z-index-container {
+            position: relative;
+            height: 150px;
+            background-color: #f7f7f7;
+            border: 1px dashed #999;
+        }
+        .z-index-container .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            color: white;
+        }
+        .z-index-1 {
+            background-color: #e74c3c;
+            top: 20px;
+            left: 20px;
+            z-index: 1;
+        }
+        .z-index-2 {
+            background-color: #3498db;
+            top: 40px;
+            left: 40px;
+            z-index: 2;
+        }
+        .z-index-3 {
+            background-color: #27ae60;
+            top: 60px;
+            left: 60px;
+            z-index: 3;
+        }
+
+
+        /* --- Flexbox Example --- */
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            height: 150px;
+            background-color: #e0f7fa;
+            border: 2px solid #00bcd4;
+        }
+        .flex-item {
+            background-color: #80deea;
+            color: #fff;
+            padding: 15px;
+            margin: 5px;
+            text-align: center;
+            border-radius: 5px;
+            flex-grow: 1;
+            flex-basis: 0;
+        }
+
+        /* --- CSS Grid Example --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 100px auto 1fr;
+            grid-template-rows: 50px 100px;
+            gap: 10px;
+            background-color: #e6ffe6;
+            border: 2px solid #4CAF50;
+            padding: 10px;
+        }
+        .grid-item {
+            background-color: #81c784;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .grid-item:nth-child(1) {
+            grid-column: 1 / 4;
+        }
+        .grid-item:nth-child(2) {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+        }
+        .grid-item:nth-child(3) {
+            grid-row: 2 / 3;
+            grid-column: 2 / 4;
+        }
+        .grid-item:nth-child(4) {
+            grid-column: 1 / 4;
+            background-color: #558B2F;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #333;
+            color: #fff;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Fundamentos de CSS - Ejemplos</h1>
+    </header>
 
-  <h1>Fundamentos de CSS</h1>
+    <main>
+        <section id="box-model">
+            <h2>Box Model</h2>
+            <div class="example-container">
+                <div class="box-model-example">Contenido</div>
+            </div>
+        </section>
 
-  <h2>1. Color de texto</h2>
-  <div class="ejemplo color">Este texto es de color rojo.</div>
+        <section id="display">
+            <h2>Display</h2>
+            <div class="example-container">
+                <div class="display-example block-element">Bloque</div>
+                <span class="display-example inline-element">Inline</span>
+                <span class="display-example inline-block-element">Inline-Block</span>
+            </div>
+        </section>
 
-  <h2>2. Color de fondo</h2>
-  <div class="ejemplo fondo">Este div tiene fondo amarillo.</div>
+        <section id="position">
+            <h2>Position</h2>
+            <div class="example-container position-container">
+                <div class="static-box">Static</div>
+                <div class="relative-box">Relative</div>
+                <div class="absolute-box">Absolute</div>
+                <div class="fixed-box">Fixed</div>
+            </div>
+            <p style="height: 1000px; margin-top: 20px;">Desplázate hacia abajo para ver el efecto de 'fixed' y 'sticky' (este es un espacio para simular scroll).</p>
+            <div class="sticky-box">Sticky</div>
+        </section>
 
-  <h2>3. Tamaño de fuente</h2>
-  <div class="ejemplo tamanio">Este texto es más grande.</div>
+        <section id="z-index">
+            <h2>z-index</h2>
+            <div class="example-container z-index-container">
+                <div class="box z-index-1">Caja 1 (z-index: 1)</div>
+                <div class="box z-index-2">Caja 2 (z-index: 2)</div>
+                <div class="box z-index-3">Caja 3 (z-index: 3)</div>
+            </div>
+        </section>
 
-  <h2>4. Bordes</h2>
-  <div class="ejemplo borde">Este div tiene un borde verde punteado.</div>
+        <section id="flexbox">
+            <h2>Flexbox</h2>
+            <div class="example-container flex-container">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+            </div>
+        </section>
 
-  <h2>5. Márgenes</h2>
-  <div class="ejemplo margen">Este div tiene un margen amplio.</div>
+        <section id="css-grid">
+            <h2>CSS Grid</h2>
+            <div class="example-container grid-container">
+                <div class="grid-item">Header</div>
+                <div class="grid-item">Sidebar</div>
+                <div class="grid-item">Main Content</div>
+                <div class="grid-item">Footer</div>
+            </div>
+        </section>
+    </main>
 
-  <h2>6. Relleno (Padding)</h2>
-  <div class="ejemplo padding">Este div tiene relleno interno.</div>
-
-  <h2>7. Fuente</h2>
-  <div class="ejemplo fuente">Este texto usa una fuente de máquina de escribir.</div>
-
+    <footer>
+        <p>&copy; 2025 Guía de Fundamentos CSS. Creado para GitHub Pages.</p>
+    </footer>
 </body>
 </html>
