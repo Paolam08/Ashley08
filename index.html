@@ -112,69 +112,31 @@
             border: 1px solid #d2b48c;
         }
 
-        /* --- Position Example --- */
-        .position-container {
-            position: relative;
-            min-height: 150px;
-            background-color: #f0fff0;
-            border: 1px dashed #98fb98;
-            padding: 15px;
-            margin-bottom: 30px;
+        /* --- CSS Transitions Example --- */
+        .transition-example {
+            width: 100px;
+            height: 100px;
+            background-color: #a5d6a7;
+            margin: 30px auto;
+            transition: background-color 0.5s ease, transform 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        .position-container .box {
-            padding: 10px;
-            border: 1px solid #666;
-            background-color: #eee;
+        .transition-example:hover {
+            background-color: #4CAF50;
+            transform: scale(1.1) rotate(5deg);
+        }
+        .transition-container p {
             text-align: center;
-            width: 70px;
-            height: 40px;
-            line-height: 40px;
-            border-radius: 3px;
+            font-size: 0.9em;
+            color: #666;
         }
 
-        .static-box {
-            background-color: #ffebee;
-            color: #d32f2f;
-        }
-        .relative-box {
-            position: relative;
-            top: 15px;
-            left: 15px;
-            background-color: #e3f2fd;
-            color: #1976d2;
-        }
-        .absolute-box {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background-color: #fff8e1;
-            color: #fbc02d;
-        }
-        .fixed-box {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #f1f8e9;
-            border: 1px solid #8bc34a;
-            color: #388e3c;
-            width: 90px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            border-radius: 4px;
-            z-index: 1000;
-        }
-        .sticky-box {
-            position: sticky;
-            top: 10px;
-            background-color: #fffde7;
-            border: 1px solid #fdd835;
-            padding: 10px;
-            text-align: center;
-            margin-top: 1rem;
-            border-radius: 4px;
-            z-index: 999;
-        }
 
         /* --- z-index Example --- */
         .z-index-container {
@@ -302,16 +264,12 @@
             </div>
         </section>
 
-        <section id="position">
-            <h2>Position</h2>
-            <div class="example-container position-container">
-                <div class="static-box">Static</div>
-                <div class="relative-box">Relative</div>
-                <div class="absolute-box">Absolute</div>
-                <div class="fixed-box">Fixed</div>
+        <section id="css-transitions">
+            <h2>CSS Transitions</h2>
+            <div class="example-container transition-container">
+                <div class="transition-example">Pasa el ratón</div>
+                <p>Pasa el ratón sobre la caja para ver la transición.</p>
             </div>
-            <p style="height: 1000px; margin-top: 20px;">Desplázate hacia abajo para ver el efecto de 'fixed' y 'sticky' (este es un espacio para simular scroll).</p>
-            <div class="sticky-box">Sticky</div>
         </section>
 
         <section id="z-index">
